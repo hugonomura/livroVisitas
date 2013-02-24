@@ -1,0 +1,8 @@
+#ignorando arquivos do netbeans
+/nbproject/private/
+nbproject/
+
+# ignorando pastas com arquivos gerados pelo Smarty
+templates_c/
+cache/
+
