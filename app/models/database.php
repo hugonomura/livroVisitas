@@ -27,7 +27,31 @@ class Database {
   }
   
   function criarDB() {
-    $this->sql = 'CREATE DATABASE IF NOT EXISTS livroVisitas;';
+    /*
+     * Funcao que cria o DB livroVisitas, caso nao exista
+     */
+    $this->sql = 'CREATE DATABASE IF NOT EXISTS livroVisitas;
+                  USE livroVisitas ;
+                  CREATE TABLE IF NOT EXISTS Usuario(
+                                       id Int AUTO_INCREMENT,
+                                       nome VarChar(50) NOT NULL,
+                                       email VarChar(50) NOT NULL,
+                                       website Varchar(50) NOT NULL,
+                                       login VarChar(20) NOT NULL UNIQUE,
+                                       senha VarChar(100) NOT NULL,
+                                       PRIMARY KEY(id));
+                  CREATE INDEX index_usuario ON Usuario (login(20));
+                  CREATE TABLE IF NOT EXISTS Recado(
+                                      id Int AUTO_INCREMENT,
+                                      user_id Int,
+                                      mensagem VarChar(255) NOT NULL,
+                                      publicado TimeStamp NOT NULL,
+                                      FOREIGN KEY(user_id) REFERENCES Usuario(id),
+                                      PRIMARY KEY(id));
+                  CREATE INDEX index_recado_id ON Recado (id);
+                  CREATE INDEX index_recado_user ON Recado (user_id);';
+    mysql_query($this->sql);
+    $this->sql = '';
   }
 
   function selecionarDB() {

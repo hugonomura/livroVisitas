@@ -2,16 +2,24 @@
 
 class Usuario {
 
-  private $login, $senha, $nome, $email, $website;
+  private $id, $login, $senha, $nome, $email, $website;
 
   function __construct($login, $senha, $nome, $email, $website) {
     $this->login = $login;
-    $this->senha = $senha;
+    $this->senha = sha1($senha);
     $this->nome = $nome;
     $this->email = $email;
     $this->website = $website;
   }
 
+  public function getId() {
+    return $this->id;
+  }
+
+  public function setId($id) {
+    $this->id = $id;
+  }
+  
   public function getLogin() {
     return $this->login;
   }
@@ -25,7 +33,7 @@ class Usuario {
   }
 
   public function setSenha($senha) {
-    $this->senha = $senha;
+    $this->senha = sha1($senha);
   }
 
   public function getNome() {
