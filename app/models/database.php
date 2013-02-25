@@ -31,7 +31,7 @@ class Database {
      * Funcao que cria o DB livroVisitas, caso nao exista
      */
     $this->sql = 'CREATE DATABASE IF NOT EXISTS livroVisitas;
-                  USE livroVisitas ;
+                  USE livroVisitas;
                   CREATE TABLE IF NOT EXISTS Usuario(
                                        id Int AUTO_INCREMENT,
                                        nome VarChar(50) NOT NULL,
