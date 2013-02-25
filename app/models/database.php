@@ -47,8 +47,7 @@ class Database {
                                       mensagem VarChar(255) NOT NULL,
                                       publicado TimeStamp DEFAULT CURRENT_TIMESTAMP,
                                       FOREIGN KEY(user_id) REFERENCES Usuario(id),
-                                      PRIMARY KEY(id));
-                  CREATE INDEX index_recado_user ON Recado (user_id);';
+                                      PRIMARY KEY(id));';
     mysql_query($this->sql);
     $this->sql = '';
   }
