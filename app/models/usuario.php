@@ -2,14 +2,15 @@
 
 class Usuario {
 
-  private $id, $login, $senha, $nome, $email, $website;
+  private $id, $login, $senha, $nome, $email, $website, $admin;
 
-  function __construct($login, $senha, $nome, $email, $website) {
+  function __construct($login, $senha, $nome, $email, $website, $admin) {
     $this->login = $login;
     $this->senha = sha1($senha);
     $this->nome = $nome;
     $this->email = $email;
     $this->website = $website;
+    $this->admin = $admin;
   }
 
   public function getId() {
@@ -60,6 +61,14 @@ class Usuario {
     $this->website = $website;
   }
 
+  public function getAdmin() {
+    return $this->admin;
+  }
+
+  public function setAdmin($admin) {
+    $this->admin = $admin;
+  }
+  
 }
 
 ?>

@@ -39,16 +39,15 @@ class Database {
                                        website Varchar(50) NOT NULL,
                                        login VarChar(20) NOT NULL UNIQUE,
                                        senha VarChar(100) NOT NULL,
+                                       admin Bool DEFAULT false,
                                        PRIMARY KEY(id));
-                  CREATE INDEX index_usuario ON Usuario (login(20));
                   CREATE TABLE IF NOT EXISTS Recado(
                                       id Int AUTO_INCREMENT,
                                       user_id Int,
                                       mensagem VarChar(255) NOT NULL,
-                                      publicado TimeStamp NOT NULL,
+                                      publicado TimeStamp DEFAULT CURRENT_TIMESTAMP,
                                       FOREIGN KEY(user_id) REFERENCES Usuario(id),
                                       PRIMARY KEY(id));
-                  CREATE INDEX index_recado_id ON Recado (id);
                   CREATE INDEX index_recado_user ON Recado (user_id);';
     mysql_query($this->sql);
     $this->sql = '';
