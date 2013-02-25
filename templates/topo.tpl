@@ -3,7 +3,18 @@
 <head>
   <title>Livro de Visitas | {$titulo}</title>
   <link rel="stylesheet" type="text/css" href="../templates/style.css" />
-  <!-- <script type="text/javascript" src="path" /> -->
+
+  <!-- Tabs com jQuery -->
+  <script src="http://code.jquery.com/jquery-1.9.1.js" />
+  <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js" />
+  <link rel="stylesheet" href="/resources/demos/style.css" />
+  <script>
+  $(function() {
+    $( "#tabs" ).tabs();
+  });
+  </script>
+  <!-- /Tabs com jQuery -->
+
 </head>
 <body>
   <header>
