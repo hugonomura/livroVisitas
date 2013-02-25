@@ -1,8 +1,10 @@
 <?php
 
-require_once('setup.php');
-$smarty = new Smarty_LivroVisitas;
-$smarty->assign('name', 'Thomas');
+  require_once('setup.php');
+  $smarty = new Smarty_LivroVisitas;
+  $smarty->assign('name', 'Thomas');
 
-$smarty->display('index.tpl');
+  $smarty->assign('titulo', 'Home');
+
+  $smarty->display('index.tpl');
 ?>
