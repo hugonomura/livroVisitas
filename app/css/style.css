@@ -18,7 +18,7 @@ header.principal {
   z-index: 1;
 }
 
-article.principal {
+section.principal {
   margin: 0 auto;
   width: 80%;
   padding: 10px;
@@ -35,7 +35,7 @@ footer.principal {
   margin: 0;
 }
 
-article, footer.principal {
+section, footer.principal {
   position: relative;
   top: 40px;
 }
@@ -74,7 +74,7 @@ header.principal, footer.principal {
   color: #FFF;
 }
 
-article.principal {
+section.principal {
   color: #000;
   background: #FFF;
 }
@@ -112,7 +112,7 @@ article.principal {
 }
 
 .active, .menu ul li.active a:hover {
-  background: #96a8de;
+  background: #172449;
   color: #fff;
 }
 
@@ -120,7 +120,6 @@ article.principal {
   background: #f3f5fb;
   color: #142042;
 }
-
 
 .menu ul, .menu ul li {
   border-left: #314e9f thin solid;

@@ -25,7 +25,7 @@ class Database {
     $con = mysql_connect($this->host, $this->user, $this->pass) or die($this->erro(mysql_error()));
     return $con;
   }
-  
+
   function criarDB() {
     /*
      * Funcao que cria o DB livroVisitas, caso nao exista
@@ -91,6 +91,13 @@ class Database {
      * @return String String SQL
      */
     return $this->sql;
+  }
+
+  public function setSql($sql) {
+    /*
+     * Função para setar a query que sera feita
+     */
+    $this->sql = $sql;
   }
 
   function erro($erro) {

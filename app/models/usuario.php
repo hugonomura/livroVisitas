@@ -4,7 +4,7 @@ class Usuario {
 
   private $id, $login, $senha, $nome, $email, $website, $admin;
 
-  function __construct($login, $senha, $nome, $email, $website, $admin) {
+  function __construct($login, $senha, $nome, $email, $website, $admin=false) {
     $this->login = $login;
     $this->senha = sha1($senha);
     $this->nome = $nome;
@@ -20,7 +20,7 @@ class Usuario {
   public function setId($id) {
     $this->id = $id;
   }
-  
+
   public function getLogin() {
     return $this->login;
   }
@@ -68,7 +68,7 @@ class Usuario {
   public function setAdmin($admin) {
     $this->admin = $admin;
   }
-  
+
 }
 
 ?>

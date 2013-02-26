@@ -1,6 +1,6 @@
 {* Smarty *}
 
-  </article>
+  </section>
   <footer class="principal">
     aqui vai alguma nota
   </footer>

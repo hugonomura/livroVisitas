@@ -9,10 +9,10 @@
     <a href="#"><h1 id="logo">Livro de Visitas</h1></a>
     <nav class="menu principal">
       <ul class="menu">
-        <li class="active"><a href="#">Recados</a></li>
-        <li><a href="#">Entrar</a></li>
-        <li><a href="#">Cadastrar-se</a></li>
+        <li class={$index}><a href="index.php">Recados</a></li>
+        <li class=${$entrar}><a href="#">Entrar</a></li>
+        <li class={$cadastro}><a href="cadastro.php">Cadastrar-se</a></li>
       </ul>
     </nav>
   </header>
-  <article id="content" class="principal">
+  <section class="principal">
