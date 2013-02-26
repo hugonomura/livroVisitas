@@ -1,9 +1,9 @@
 {* Smarty *}
 
   </article>
-  <footer>
+  <footer class="principal">
     aqui vai alguma nota
   </footer>
-  <footer id="rodape"></footer>
+  <footer id="rodape" class="principal"></footer>
 </body>
 </html>

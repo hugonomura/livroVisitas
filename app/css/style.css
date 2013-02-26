@@ -1,0 +1,136 @@
+/* Posicionando e dimensionando os elementos da página */
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  width: 100%;
+  background: #a5a7ab;
+}
+
+/*body, header.principal {
+  min-width: 500px
+}
+*/
+header.principal {
+  position: fixed;
+  top: 0px;
+  margin: 0;
+  z-index: 1;
+}
+
+article.principal {
+  margin: 0 auto;
+  width: 80%;
+  padding: 10px;
+  border: 1px;
+  border-radius: 6px;
+  min-height: 80%;
+}
+
+footer.principal {
+  margin: 10px 0 0 0;
+}
+
+#rodape {
+  margin: 0;
+}
+
+article, footer.principal {
+  position: relative;
+  top: 40px;
+}
+
+header.principal, footer.principal {
+  width: 100%;
+  height: 30px;
+  border: 0;
+  text-align: center;
+}
+
+nav.principal {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  margin-right: 9%;
+  direction: rtl;
+  float: right;
+  text-align: center;
+  height: 100%;
+}
+
+#logo, #logo a {
+  padding-top: 3px;
+  margin: 0;
+  margin-left: 10%;
+  display: inline;
+  text-align: center;
+  float: left;
+}
+/* Elementos posicionados. */
+
+/* Definindo as cores e fontes */
+header.principal, footer.principal {
+  background: #5088dc;
+  color: #FFF;
+}
+
+article.principal {
+  color: #000;
+  background: #FFF;
+}
+
+#logo, #logo a {
+  font-size: 20px;
+  color: #FFF;
+  text-decoration: none;
+}
+/* Cores definidas. */
+
+/* Construindo o menu */
+.menu ul {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  list-style: none;
+}
+
+.menu ul li {
+  display: inline;
+  float: left;
+  padding:0px;
+  margin: 0;
+  width: 150px;
+  padding-top: 10px;
+}
+
+.menu ul li a {
+  color: #FFF;
+  text-decoration: none;
+  display: block;
+  font-weight: bold;
+}
+
+.active, .menu ul li.active a:hover {
+  background: #96a8de;
+  color: #fff;
+}
+
+.menu ul li a:hover {
+  background: #f3f5fb;
+  color: #142042;
+}
+
+
+.menu ul, .menu ul li {
+  border-left: #314e9f thin solid;
+  border-right: #314e9f thin solid;
+  border-bottom: #314e9f thin solid;
+}
+
+.menu ul li, .menu ul li a {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+/* Menu construido */

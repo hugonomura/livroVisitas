@@ -5,9 +5,9 @@
   <link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
 <body>
-  <header>
+  <header class="principal">
     <a href="#"><h1 id="logo">Livro de Visitas</h1></a>
-    <nav class="menu">
+    <nav class="menu principal">
       <ul class="menu">
         <li class="active"><a href="#">Recados</a></li>
         <li><a href="#">Entrar</a></li>
@@ -15,4 +15,4 @@
       </ul>
     </nav>
   </header>
-  <article id="content">
+  <article id="content" class="principal">
