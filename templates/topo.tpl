@@ -10,7 +10,7 @@
     <nav class="menu principal">
       <ul class="menu">
         <li class={$index}><a href="index.php">Recados</a></li>
-        <li class=${$entrar}><a href="#">Entrar</a></li>
+        <li class=${$entrar}><a href="login.php">Entrar</a></li>
         <li class={$cadastro}><a href="cadastro.php">Cadastrar-se</a></li>
       </ul>
     </nav>

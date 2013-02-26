@@ -6,8 +6,8 @@
 
   // definindo a class que esta active
   $smarty->assign('index', "");
-  $smarty->assign('entrar', "");
-  $smarty->assign('cadastro', "active");
+  $smarty->assign('entrar', "active");
+  $smarty->assign('cadastro', "");
 
-  $smarty->display('cadastro.tpl');
+  $smarty->display('login.tpl');
 ?>

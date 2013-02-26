@@ -3,6 +3,8 @@
     define("SMARTY_DIR","/usr/share/php/smarty3/");
     require_once(SMARTY_DIR . 'Smarty.class.php');
 
+    header('Content-type: text/html; charset=utf-8');
+
     class Smarty_LivroVisitas extends Smarty {
 
     function __construct(){
