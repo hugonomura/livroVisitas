@@ -13,12 +13,16 @@ $(document).ready(function(){
       }
     }
     data = {
-                login:$("#login").val(),
-                senha:$("#senha").val()
-            };
+        login:$("#login").val(),
+        senha:$("#senha").val()
+    };
     $.post("actions/entrar.php",data,
       function(retorno){
-        $('#aside-erro').html(retorno);
+        if(retorno != "sucesso"){
+            $('#aside-erro').html(retorno);
+        }else{
+            window.location.replace("index.php");
+        }
     }, "html");
   });
 });
