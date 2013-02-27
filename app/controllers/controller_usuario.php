@@ -52,8 +52,7 @@
     $db->selecionarDB();
     $db->set('sql', "SELECT senha FROM Usuario WHERE login = '$user';");
     $result = $db->query();
-    $pwd = sha1($pwd);
-    if(mysql_result($result, 0) == $pwd){
+    if(mysql_result($result, 0) == sha1($pwd)){
       return true;
     }else{
       return false;

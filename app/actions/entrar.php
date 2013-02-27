@@ -12,5 +12,6 @@
   }else{
     echo "sucesso";
     $_SESSION["usuario"] = true; // colocar o objeto usuario aqui depois
+    header('Location: ../index.php');
   }
 ?>

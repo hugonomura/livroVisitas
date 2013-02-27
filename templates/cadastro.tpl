@@ -1,5 +1,5 @@
+{* Smarty *}
 {include file='topo.tpl'}
-
 <link rel="stylesheet" type="text/css" href="css/form.css" />
 <script type="text/javascript">
 {literal}
@@ -38,7 +38,7 @@ $(document).ready(function(){
     <p><label for="login">Login</label><input type="text" id="login" name="login" /></p>
     <p><label for="senha">Senha</label><input type="password" id="senha" name="senha" /></p>
     <p><input type="button" value="Enviar" id="submit" /></p>
-    <aside id="aside-erro"><b>{nocache}{$smarty.session.mensagem}{/nocache}</b></aside>
+    <aside id="aside-erro"><b></b></aside>
   </form>
 </article>
 
