@@ -16,6 +16,7 @@
   function cadastrarUsuario($login, $senha, $nome, $email, $website){
     $user = new Usuario($login, $senha, $nome, $email, $website);
     $db = new Database;
+    $senha = sha1($senha);
     $db->conectar();
     $db->selecionarDB();
     $db->set('sql', "INSERT INTO `livroVisitas`.`Usuario`(`nome`, `email`, `website`, `login`, `senha`) VALUES(
@@ -42,5 +43,20 @@
     $db->set('sql', "SELECT * FROM Usuario WHERE login = '$user';");
     $result = $db->query();
     return mysql_result($result, 0);
+  }
+
+  // funcao que verifica se a senha do usuario esta correta
+  function verificaSenha($user, $pwd){
+    $db = new Database;
+    $db->conectar();
+    $db->selecionarDB();
+    $db->set('sql', "SELECT senha FROM Usuario WHERE login = '$user';");
+    $result = $db->query();
+    $pwd = sha1($pwd);
+    if(mysql_result($result, 0) == $pwd){
+      return true;
+    }else{
+      return false;
+    }
   }
 ?>

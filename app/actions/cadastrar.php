@@ -1,9 +1,6 @@
 <?php
- // require_once('../setup.php');
- // $smarty = new Smarty_LivroVisitas;
  require_once '../controllers/controller_usuario.php';
-
-session_start();
+ session_start();
 
 // dbg
 ini_set('display_errors', 'On');
@@ -17,16 +14,16 @@ error_reporting(E_ALL);
   $senha = $_POST["senha"];
 
   if(usuarioExiste($login) == 1){
-    $_SESSION["mensagem"] = "Esse login já está sendo usado.";
-    header("location:../cadastro.php");
+    echo "<b>Esse login já está sendo usado.</b>";
   }else{
     $res = cadastrarUsuario($login, $senha, $nome, $email, $site);
-    echo $res . "<br>";
+    // echo $res . "<br>";
     if($res == 1){
+      echo "Cadastro efetuado com sucesso";
       // header("location:../login.php");
-      $_SESSION["mensagem"] = "Usuario cadastrado com sucesso.";
-      echo $_SESSION["mensagem"];
-      header("location:../cadastro.php");
+      // $_SESSION["mensagem"] = "Usuario cadastrado com sucesso.";
+      // echo $_SESSION["mensagem"];
+      // header("location:../cadastro.php");
       // echo getIdUsuario($login);
     }else{
       echo "Erro ao cadastrar usuário";
