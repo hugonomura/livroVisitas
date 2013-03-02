@@ -15,6 +15,7 @@ error_reporting(E_ALL);
   $smarty->assign('index', "active");
   $smarty->assign('entrar', "");
   $smarty->assign('cadastro', "");
+  $smarty->assign('perfil', "");
 
   $retorno = recuperarRecados();
   $smarty->assign('recados', $retorno);

@@ -10,7 +10,7 @@
   if(usuarioExiste($login) == 0 || verificaSenha($login, $senha) == false){
     echo "<b>Usuário ou senha errados.</b>";
   }else{
-    echo "sucesso";
+    echo "logado";
     $_SESSION["user_id"] = getIdUsuario($login);
     $_SESSION["usuario"] = true;
     // header('Location: ../index.php');

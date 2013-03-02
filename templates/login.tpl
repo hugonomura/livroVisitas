@@ -18,7 +18,7 @@ $(document).ready(function(){
     };
     $.post("actions/entrar.php",data,
       function(retorno){
-        if(retorno != "sucesso"){
+        if(retorno != "logado"){
             $('#aside-erro').html(retorno);
         }else{
             window.location.replace("index.php");

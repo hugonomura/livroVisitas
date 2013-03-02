@@ -21,7 +21,11 @@ $(document).ready(function(){
             };
     $.post("actions/cadastrar.php",data,
       function(retorno){
-        $('#aside-erro').html(retorno);
+        if(retorno == "cadastrado"){
+          window.location.replace("index.php");
+        }else{
+          $('#aside-erro').html(retorno);
+        }
     }, "html");
   });
 });

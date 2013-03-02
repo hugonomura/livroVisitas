@@ -2,10 +2,6 @@
  require_once '../controllers/controller_usuario.php';
  session_start();
 
-// dbg
-ini_set('display_errors', 'On');
-error_reporting(E_ALL);
-
   // recuperando os dados
   $nome = $_POST["nome"];
   $email = $_POST["email"];
@@ -17,14 +13,9 @@ error_reporting(E_ALL);
     echo "<b>Esse login já está sendo usado.</b>";
   }else{
     $res = cadastrarUsuario($login, $senha, $nome, $email, $site);
-    // echo $res . "<br>";
     if($res == 1){
-      echo "Cadastro efetuado com sucesso";
-      // header("location:../login.php");
-      // $_SESSION["mensagem"] = "Usuario cadastrado com sucesso.";
-      // echo $_SESSION["mensagem"];
-      // header("location:../cadastro.php");
-      // echo getIdUsuario($login);
+      echo "cadastrado";
+      $_SESSION["usuario"] = true;
     }else{
       echo "Erro ao cadastrar usuário";
     }

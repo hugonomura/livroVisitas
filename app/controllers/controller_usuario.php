@@ -1,6 +1,8 @@
 <?php
-  require_once '../models/usuario.php';
-  require_once '../models/database.php';
+  $caminho = '/var/www/livroVisitas/app/';
+
+  require_once $caminho . 'models/usuario.php';
+  require_once $caminho . 'models/database.php';
 
   // funcao que verifica se um usuário existe ou não
   function usuarioExiste($user){
@@ -35,14 +37,22 @@
     return mysql_result($result, 0);
   }
 
-  // funcao que recebe o login do usuario e retorna os outros atributos
-  function getUsuario(){
-    $db = new Database;
-    $db->conectar();
-    $db->selecionarDB();
-    $db->set('sql', "SELECT * FROM Usuario WHERE login = '$user'");
-    $result = $db->query();
-    return mysql_result($result, 0);
+  // funcao que recebe o login ou id do usuario e retorna os outros atributos
+  function getUsuario($user){
+    if(is_nan($user)){
+      $db = new Database;
+      $db->conectar();
+      $db->selecionarDB();
+      $db->set('sql', "SELECT * FROM Usuario WHERE login = '$user'");
+      $result = $db->query();
+    }else{
+      $db = new Database;
+      $db->conectar();
+      $db->selecionarDB();
+      $db->set('sql', "SELECT * FROM Usuario WHERE id = '$user'");
+      $result = $db->query();
+    }
+    return mysql_fetch_assoc($result);
   }
 
   // funcao que verifica se a senha do usuario esta correta

@@ -8,6 +8,7 @@
   $smarty->assign('index', "");
   $smarty->assign('entrar', "");
   $smarty->assign('cadastro', "active");
+  $smarty->assign('perfil', "");
 
   $smarty->display('cadastro.tpl');
 ?>

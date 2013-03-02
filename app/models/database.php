@@ -46,7 +46,7 @@ class Database {
                                       user_id Int,
                                       mensagem VarChar(255) NOT NULL,
                                       publicado TimeStamp DEFAULT CURRENT_TIMESTAMP,
-                                      FOREIGN KEY(user_id) REFERENCES Usuario(id),
+                                      FOREIGN KEY(user_id) REFERENCES Usuario(id) ON DELETE CASCADE,
                                       PRIMARY KEY(id));';
     mysql_query($this->sql);
     $this->sql = '';
