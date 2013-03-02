@@ -45,7 +45,7 @@ $(document).ready(function(){
   </article>
 {if $smarty.session.usuario eq TRUE}
   <form action="actions/novoRecado.php" method="post">
-    <textarea cols="100" rows="3" id="novoRecado">Escreva seu recado aqui... (Máximo 255 caracteres)</textarea>
+    <textarea cols="50" rows="6" id="novoRecado">Escreva seu recado aqui... (Máximo 255 caracteres)</textarea>
     <input type="button" value="Enviar" id="submit">
   </form>
 {/if}

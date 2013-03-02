@@ -66,6 +66,11 @@ nav.principal {
   text-align: center;
   float: left;
 }
+
+#recados p {
+  margin: 0;
+  margin-left: 2%;
+}
 /* Elementos posicionados. */
 
 /* Definindo as cores e fontes */
