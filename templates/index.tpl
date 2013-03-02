@@ -18,6 +18,18 @@ $(document).ready(function(){
           });
   });
 
+  $("#novoRecado").focusin(function(){
+    if($("#novoRecado").val() == "Escreva seu recado aqui... (Máximo 255 caracteres)"){
+      $("#novoRecado").val("");
+    }
+  });
+
+  $("#novoRecado").focusout(function(){
+    if($("#novoRecado").val() == ""){
+        $("#novoRecado").val("Escreva seu recado aqui... (Máximo 255 caracteres)");
+      }
+  });
+
 });
 {/literal}
 </script>
