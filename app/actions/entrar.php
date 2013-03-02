@@ -7,7 +7,7 @@
   $login = $_POST["login"];
   $senha = $_POST["senha"];
 
-  if(usuarioExiste($login) == 0 && verificaSenha($login, $senha) == false){
+  if(usuarioExiste($login) == 0 || verificaSenha($login, $senha) == false){
     echo "<b>Usuário ou senha errados.</b>";
   }else{
     echo "sucesso";
