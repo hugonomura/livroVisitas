@@ -1,35 +1,42 @@
 {* Smarty *}
 {include file='topo.tpl'}
-<br><br>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+<script type="text/javascript">
+{literal}
+$(document).ready(function(){
+
+  $("#submit").click(function(event) {
+              event.preventDefault();
+          $.ajax({
+              url: "actions/novoRecado.php",
+              data: 'novoRecado=' + $("#novoRecado").val(),
+              type: 'POST',
+              context: jQuery('#recados'),
+              success: function(data){
+                  this.prepend(data);
+              }
+          });
+  });
+
+});
+{/literal}
+</script>
+
+
+{nocache}
+  <article id="recados">
+  {foreach from=$recados item=recado}
+      <header class="titulo">{$recado.user_id} diz:</header>
+      <p>{$recado.mensagem}</p>
+      <hr>
+  {/foreach}
+  </article>
+{if $smarty.session.usuario eq TRUE}
+  <form action="actions/novoRecado.php" method="post">
+    <textarea cols="100" rows="3" id="novoRecado">Escreva seu recado aqui... (Máximo 255 caracteres)</textarea>
+    <input type="button" value="Enviar" id="submit">
+  </form>
+{/if}
+{/nocache}
 
 {include file='rodape.tpl'}

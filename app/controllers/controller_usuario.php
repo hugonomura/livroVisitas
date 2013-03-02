@@ -7,7 +7,7 @@
     $db = new Database;
     $db->conectar();
     $db->selecionarDB();
-    $db->set('sql', "SELECT login FROM Usuario WHERE login = '$user';");
+    $db->set('sql', "SELECT login FROM Usuario WHERE login = '$user'");
     $result = $db->query();
     return mysql_num_rows($result);
   }
@@ -20,7 +20,7 @@
     $db->conectar();
     $db->selecionarDB();
     $db->set('sql', "INSERT INTO `livroVisitas`.`Usuario`(`nome`, `email`, `website`, `login`, `senha`) VALUES(
-              '$nome', '$email', '$website', '$login', '$senha');");
+              '$nome', '$email', '$website', '$login', '$senha')");
     $result = $db->query();
     return $result;
   }
@@ -30,7 +30,7 @@
     $db = new Database;
     $db->conectar();
     $db->selecionarDB();
-    $db->set('sql', "SELECT id FROM Usuario WHERE login = '$user';");
+    $db->set('sql', "SELECT id FROM Usuario WHERE login = '$user'");
     $result = $db->query();
     return mysql_result($result, 0);
   }
@@ -40,7 +40,7 @@
     $db = new Database;
     $db->conectar();
     $db->selecionarDB();
-    $db->set('sql', "SELECT * FROM Usuario WHERE login = '$user';");
+    $db->set('sql', "SELECT * FROM Usuario WHERE login = '$user'");
     $result = $db->query();
     return mysql_result($result, 0);
   }
@@ -50,7 +50,7 @@
     $db = new Database;
     $db->conectar();
     $db->selecionarDB();
-    $db->set('sql', "SELECT senha FROM Usuario WHERE login = '$user';");
+    $db->set('sql', "SELECT senha FROM Usuario WHERE login = '$user'");
     $result = $db->query();
     if(mysql_result($result, 0) == sha1($pwd)){
       return true;

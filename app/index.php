@@ -1,5 +1,10 @@
 <?php
 
+// dbg
+ini_set('display_errors', 'On');
+error_reporting(E_ALL);
+
+  require_once('controllers/controller_recado.php');
   require_once('setup.php');
   $smarty = new Smarty_LivroVisitas;
 
@@ -11,7 +16,8 @@
   $smarty->assign('entrar', "");
   $smarty->assign('cadastro', "");
 
-  $_SESSION["mensagem"] = "";
+  $retorno = recuperarRecados();
+  $smarty->assign('recados', $retorno);
 
   $smarty->display('index.tpl');
 ?>

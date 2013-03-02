@@ -84,6 +84,15 @@ section.principal {
   color: #FFF;
   text-decoration: none;
 }
+
+.titulo {
+  text-decoration: underline;
+}
+
+#recados {
+  max-height: 400px;
+  overflow: auto;
+}
 /* Cores definidas. */
 
 /* Construindo o menu */

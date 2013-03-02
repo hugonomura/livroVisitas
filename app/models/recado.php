@@ -9,7 +9,7 @@ class Recado {
     $this->mensagem = $mensagem;
     $this->publicado = $publicado;
   }
-  
+
   public function getId() {
     return $this->id;
   }
@@ -17,7 +17,7 @@ class Recado {
   public function setId($id) {
     $this->id = $id;
   }
-  
+
   public function getUsuario() {
     return $this->usuario;
   }
@@ -33,7 +33,7 @@ class Recado {
   public function setMensagem($mensagem) {
     $this->mensagem = $mensagem;
   }
-  
+
   public function getPublicado() {
     return $this->publicado;
   }

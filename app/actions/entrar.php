@@ -11,7 +11,8 @@
     echo "<b>Usuário ou senha errados.</b>";
   }else{
     echo "sucesso";
-    $_SESSION["usuario"] = true; // colocar o objeto usuario aqui depois
+    $_SESSION["user_id"] = getIdUsuario($login);
+    $_SESSION["usuario"] = true;
     // header('Location: ../index.php');
   }
 ?>
