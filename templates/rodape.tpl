@@ -2,7 +2,7 @@
 
   </section>
   <footer class="principal">
-    aqui vai alguma nota
+    <b>Feito por:</b><i> Hugo Noboru Nomura</i>
   </footer>
   <footer id="rodape" class="principal"></footer>
 </body>
