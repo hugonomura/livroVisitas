@@ -10,6 +10,11 @@
   $login = $_POST["login"];
   $senha = $_POST["senha"];
 
+  if($_POST["senha"] != $_POST["confirma_senha"]){
+    echo "<b>Senha e confirma senha devem ser iguais!</b>";
+    return;
+  }
+
   if(usuarioExiste($login) == 1){
     echo "<b>Esse login já está sendo usado.</b>";
   }else{
@@ -23,7 +28,4 @@
       echo "Erro ao cadastrar usuário";
     }
   }
-
-  // ir para login, avisando que o cadastro foi efetuado com sucesso, caso contrario volta pro form
-//   header( 'Location: ../index.php') ;
 ?>

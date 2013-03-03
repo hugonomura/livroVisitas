@@ -4,6 +4,13 @@
 <script type="text/javascript">
 {literal}
 $(document).ready(function(){
+  $("#entrar").keypress(function() {
+    var keycode = (event.keyCode ? event.keyCode : event.which);
+     if(keycode == 13) {
+      $("#submit").click();
+     }
+  });
+
   $("#submit").click(function(){
     var arr = $("input");
     for(i = 0; i < arr.length; i++){
