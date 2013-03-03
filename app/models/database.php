@@ -93,19 +93,11 @@ class Database {
     return $this->sql;
   }
 
-  public function setSql($sql) {
-    /*
-     * Função para setar a query que sera feita
-     */
-    $this->sql = $sql;
-  }
-
   function erro($erro) {
     /*
      * Função para exibir os error
      * @param String $erro Erro a ser exibido
      */
-
     echo $erro;
   }
 
