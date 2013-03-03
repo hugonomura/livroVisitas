@@ -4,7 +4,7 @@
   require_once $caminho . 'models/usuario.php';
   require_once $caminho . 'models/database.php';
 
-  // funcao que verifica se um usuário existe ou não
+  // Função que verifica se já existe um login no banco de dados
   function usuarioExiste($user){
     $db = new Database;
     $db->conectar();
@@ -15,12 +15,16 @@
   }
 
   // funcao que cadastra um usuario no BD
-  function cadastrarUsuario($login, $senha, $nome, $email, $website){
-    $user = new Usuario($login, $senha, $nome, $email, $website);
+  function cadastrarUsuario($user){
     $db = new Database;
-    $senha = sha1($senha);
     $db->conectar();
     $db->selecionarDB();
+    $nome = $user->get('nome');
+    $email = $user->get('email');
+    $website = $user->get('website');
+    $login = $user->get('login');
+    $senha = $user->get('senha');
+
     $db->set('sql', "INSERT INTO `livroVisitas`.`Usuario`(`nome`, `email`, `website`, `login`, `senha`) VALUES(
               '$nome', '$email', '$website', '$login', '$senha')");
     $result = $db->query();
@@ -52,7 +56,10 @@
       $db->set('sql', "SELECT * FROM Usuario WHERE id = '$user'");
       $result = $db->query();
     }
-    return mysql_fetch_assoc($result);
+    $u = mysql_fetch_assoc($result);
+    $usuario = new Usuario($u["login"], $u["senha"], $u["nome"], $u["email"], $u["website"]);
+    $usuario->set('id', $u["id"]);
+    return $usuario;
   }
 
   // funcao que verifica se a senha do usuario esta correta

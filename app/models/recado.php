@@ -4,42 +4,18 @@ class Recado {
 
   private $id, $usuario, $mensagem, $publicado;
 
-  function __construct($usuario, $mensagem, $publicado) {
+  function __construct($usuario, $mensagem) {
     $this->usuario = $usuario;
     $this->mensagem = $mensagem;
-    $this->publicado = $publicado;
   }
 
-  public function getId() {
-    return $this->id;
+  public function set($prop, $value) {
+    $this->$prop = $value;
   }
 
-  public function setId($id) {
-    $this->id = $id;
-  }
-
-  public function getUsuario() {
-    return $this->usuario;
-  }
-
-  public function setUsuario($usuario) {
-    $this->usuario = $usuario;
-  }
-
-  public function getMensagem() {
-    return $this->mensagem;
-  }
-
-  public function setMensagem($mensagem) {
-    $this->mensagem = $mensagem;
-  }
-
-  public function getPublicado() {
-    return $this->publicado;
-  }
-
-  public function setPublicado($publicado) {
-    $this->publicado = $publicado;
+  // getter global
+  public function get($prop) {
+    return $this->$prop;
   }
 
 }

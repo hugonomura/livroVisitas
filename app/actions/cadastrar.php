@@ -1,5 +1,6 @@
 <?php
  require_once '../controllers/controller_usuario.php';
+ require_once '../models/usuario.php';
  session_start();
 
   // recuperando os dados
@@ -12,7 +13,8 @@
   if(usuarioExiste($login) == 1){
     echo "<b>Esse login já está sendo usado.</b>";
   }else{
-    $res = cadastrarUsuario($login, $senha, $nome, $email, $site);
+    $u = new Usuario($login, $senha, $nome, $email, $site);
+    $res = cadastrarUsuario($u);
     if($res == 1){
       echo "cadastrado";
       $_SESSION["usuario"] = true;

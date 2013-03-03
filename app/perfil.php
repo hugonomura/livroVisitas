@@ -1,7 +1,7 @@
 <?php
-
   $caminho = '/var/www/livroVisitas/app/';
   require_once $caminho . 'controllers/controller_usuario.php';
+  require_once $caminho . 'models/usuario.php';
   require_once('setup.php');
   $smarty = new Smarty_LivroVisitas;
   $smarty->assign('titulo', 'Perfil');
@@ -19,6 +19,6 @@
     $user_id = $_SESSION["user_id"];
   }
   $usuario = getUsuario($user_id);
-  $smarty->assign('user', $usuario);
+  $smarty->assignByRef('user',$usuario);
   $smarty->display('perfil.tpl');
 ?>

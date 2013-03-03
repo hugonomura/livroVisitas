@@ -15,39 +15,12 @@ class Usuario {
 
   // setter global
   public function set($prop, $value) {
-    if($prop == "login"){
-      $this->$prop = strtolower($value);
-    }
     $this->$prop = $value;
   }
 
   // getter global
   public function get($prop) {
     return $this->$prop;
-  }
-
-  public function setId($id) {
-    $this->id = $id;
-  }
-
-  public function setSenha($senha) {
-    $this->senha = sha1($senha);
-  }
-
-  public function setNome($nome) {
-    $this->nome = $nome;
-  }
-
-  public function setEmail($email) {
-    $this->email = $email;
-  }
-
-  public function setWebsite($website) {
-    $this->website = $website;
-  }
-
-  public function setAdmin($admin) {
-    $this->admin = $admin;
   }
 
 }

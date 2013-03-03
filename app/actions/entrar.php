@@ -13,6 +13,5 @@
     echo "logado";
     $_SESSION["user_id"] = getIdUsuario($login);
     $_SESSION["usuario"] = true;
-    // header('Location: ../index.php');
   }
 ?>

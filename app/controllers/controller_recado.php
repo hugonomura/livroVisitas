@@ -19,12 +19,15 @@
   }
 
   // funcao que insere o recado no banco de dados
-  function insereRecado($recado, $user){
+  function insereRecado($recado){
     $db = new Database;
     $db->conectar();
     $db->selecionarDB();
+    $user = $recado->get('usuario');
+    $user_id = $user->get('id');
+    $mensagem = $recado->get('mensagem');
     $db->set('sql', "INSERT INTO `livroVisitas`.`Recado`(`user_id`, `mensagem`) VALUES(
-               '$user', '$recado')");
+               '$user_id', '$mensagem')");
     $result = $db->query();
     return $result;
   }
