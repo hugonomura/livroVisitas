@@ -103,8 +103,7 @@ section.principal {
 }
 
 .titulo {
-  text-decoration: underline;
-  font-weight: 2;
+  font-weight: bold;
 }
 
 #recados {
@@ -120,6 +119,15 @@ section.principal {
 #email:hover, #website:hover {
   text-decoration: underline;
   color: #000;
+}
+
+.perfil {
+  color: #000;
+  text-decoration: underline;
+}
+
+.perfil:hover {
+  text-decoration: none;
 }
 /* Cores definidas. */
 

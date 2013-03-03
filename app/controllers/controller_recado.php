@@ -9,7 +9,7 @@
     $db = new Database;
     $db->conectar();
     $db->selecionarDB();
-    $db->set('sql', "SELECT user_id, mensagem from Recado ORDER BY publicado DESC");
+    $db->set('sql', "SELECT user_id, mensagem, nome FROM Recado INNER JOIN Usuario ON Recado.user_id = Usuario.id ORDER BY publicado DESC");
     $result = $db->query();
     for($i = 0; $i < mysql_num_rows($result); $i++){
       mysql_data_seek($result, $i);
