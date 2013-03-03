@@ -69,7 +69,19 @@ nav.principal {
 
 #recados p {
   margin: 0;
-  margin-left: 2%;
+  margin-left: 7%;
+}
+
+.titulo {
+  margin-left: 5%;
+}
+
+hr {
+  width: 90%;
+}
+
+#novoRecado {
+  margin-left: 5%;
 }
 /* Elementos posicionados. */
 
@@ -92,11 +104,22 @@ section.principal {
 
 .titulo {
   text-decoration: underline;
+  font-weight: 2;
 }
 
 #recados {
   max-height: 400px;
   overflow: auto;
+}
+
+#email, #website {
+  text-decoration: none;
+  color: #000;
+}
+
+#email:hover, #website:hover {
+  text-decoration: underline;
+  color: #000;
 }
 /* Cores definidas. */
 

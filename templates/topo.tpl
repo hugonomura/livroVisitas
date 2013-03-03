@@ -12,13 +12,13 @@
       <ul class="menu">
         {nocache}
         {if $smarty.session.usuario eq TRUE}
-        <li class={$index}><a href="index.php">Recados</a></li>
-        <li class={$perfil}><a href="perfil.php">Perfil</a></li>
-        <li class={$cadastro}><a href="actions/sair.php">Sair</a></li>
+        <li class="{$index}"><a href="index.php">Recados</a></li>
+        <li class="{$perfil}"><a href="perfil.php">Perfil</a></li>
+        <li class="{$cadastro}"><a href="actions/sair.php">Sair</a></li>
         {else}
-        <li class={$index}><a href="index.php">Recados</a></li>
-        <li class={$entrar}><a href="login.php">Entrar</a></li>
-        <li class={$cadastro}><a href="cadastro.php">Cadastrar-se</a></li>
+        <li class="{$index}"><a href="index.php">Recados</a></li>
+        <li class="{$entrar}"><a href="login.php">Entrar</a></li>
+        <li class="{$cadastro}"><a href="cadastro.php">Cadastrar-se</a></li>
         {/if}
         {/nocache}
       </ul>

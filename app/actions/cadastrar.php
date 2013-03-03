@@ -16,6 +16,7 @@
     if($res == 1){
       echo "cadastrado";
       $_SESSION["usuario"] = true;
+      $_SESSION["user_id"] = getIdUsuario($login);
     }else{
       echo "Erro ao cadastrar usuário";
     }

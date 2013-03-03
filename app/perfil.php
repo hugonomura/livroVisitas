@@ -7,15 +7,18 @@
   $smarty->assign('titulo', 'Perfil');
   session_start();
 
-  $user_id = $_SESSION["user_id"];
-  $usuario = getUsuario($user_id);
-
   // definindo a class que esta active
   $smarty->assign('index', "");
   $smarty->assign('entrar', "");
   $smarty->assign('cadastro', "");
   $smarty->assign('perfil', "active");
 
+  if($_GET["u_id"]){
+    $user_id = $_GET["u_id"];
+  }else{
+    $user_id = $_SESSION["user_id"];
+  }
+  $usuario = getUsuario($user_id);
   $smarty->assign('user', $usuario);
   $smarty->display('perfil.tpl');
 ?>
