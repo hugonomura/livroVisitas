@@ -3,7 +3,7 @@
 <head>
   <title>Livro de Visitas | {$titulo}</title>
   <link rel="stylesheet" type="text/css" href="css/style.css" />
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <script type="text/javascript" src="jquery/jquery-1.9.1.min.js"></script>
 </head>
 <body>
   <header class="principal">

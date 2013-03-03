@@ -16,17 +16,16 @@ class Database {
     $this->sql = '';
   }
 
-  function conectar() {
+  public function conectar() {
     /*
      * Função para conexão ao banco de dados
-     * @author Everton da Rosa (Everton3x)
      * @return Object Retorna o objeto da conexão
      */
     $con = mysql_connect($this->host, $this->user, $this->pass) or die($this->erro(mysql_error()));
     return $con;
   }
 
-  function criarDB() {
+  public function criarDB() {
     /*
      * Funcao que cria o DB livroVisitas, caso nao exista
      */
@@ -52,10 +51,9 @@ class Database {
     $this->sql = '';
   }
 
-  function selecionarDB() {
+  public function selecionarDB() {
     /*
      * Função para seleção do banco de dados a ser usado
-     * @author Everton da Rosa (Everton3x)
      * @return Boolean Retorna true (verdadeiro) ou false (falso)
      */
 
@@ -67,7 +65,7 @@ class Database {
     }
   }
 
-  function query() {
+  public function query() {
     /*
      * Função para execução da consulta ao banco de dados
      * @return Object $qry Retorna o resultado da consulta como um objeto
@@ -76,7 +74,7 @@ class Database {
     return $qry;
   }
 
-  function set($prop, $value) {
+  public function set($prop, $value) {
     /*
      * Função para atribuir valores às propriedades da classe
      * @param String $prop Nome da propriedade que terá seu valor atribuído
@@ -85,7 +83,7 @@ class Database {
     $this->$prop = $value;
   }
 
-  function getSQL() {
+  public function getSQL() {
     /*
      * Função para retornar a string SQL
      * @return String String SQL
@@ -93,7 +91,7 @@ class Database {
     return $this->sql;
   }
 
-  function erro($erro) {
+  public function erro($erro) {
     /*
      * Função para exibir os error
      * @param String $erro Erro a ser exibido
